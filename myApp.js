@@ -1,8 +1,10 @@
 let express = require('express');
 let app = express();
 
-console.log("Hello World");
 
+app.get("http://localhost:3000/", function(req, res) {
+    res.send("Hello Express");
+});
 
 
 
