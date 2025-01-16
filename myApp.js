@@ -3,6 +3,11 @@ let express = require('express');
 let app = express();
 
 
+app.use(function(req, res, next) {
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+})
+
 
 //app.get("/", function(req, res) {
     // let absolutePath = __dirname + '/views/index.html';
@@ -10,13 +15,13 @@ let app = express();
 // });
 //app.use("/public", express.static(__dirname + "/public"));
 
-app.get("/json", function(req, res) {
-    if (process.env.MESSAGE_STYLE=="uppercase") {
-        res.json({"message": "HELLO JSON"});
-    } else {
-        res.json({"message": "Hello json"});
-    }
-});
+// app.get("/json", function(req, res) {
+//     if (process.env.MESSAGE_STYLE=="uppercase") {
+//         res.json({"message": "HELLO JSON"});
+//     } else {
+//         res.json({"message": "Hello json"});
+//     }
+// });
 
 
 
