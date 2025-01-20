@@ -1,14 +1,27 @@
-require('dotenv').config()
+let bodyParser = require('body-parser');
+require('dotenv').config();
 let express = require('express');
 let app = express();
 
 
-app.get('/name', function(req,res) {
-    let firstName = req.query.first;
-    let lastName = req.query.last;
-    let fullName = (firstName + " " + lastName);
-    res.json({name: fullName});
-});
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+// app.use(function middleware(req,res,next) {
+//     let name = req.method + " " + req.path + " - " + req.ip;
+//     next();
+// })
+
+
+
+
+
+// app.get('/name', function(req,res) {
+//     let firstName = req.query.first;
+//     let lastName = req.query.last;
+//     let fullName = (firstName + " " + lastName);
+//     res.json({name: fullName});
+// });
 
 
 // app.get('/:word/echo', function(req, res) {
