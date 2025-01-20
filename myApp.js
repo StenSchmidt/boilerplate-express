@@ -2,9 +2,16 @@ require('dotenv').config()
 let express = require('express');
 let app = express();
 
-app.get('/:word/echo', function(req, res) {
-    res.send({echo: req.params.word});
+app.get('/name', function(req,res) {
+    let firstName = req.query.first;
+    let lastName = req.quary.last;
+    res.send({name: (firstName + lastName)});
 });
+
+
+// app.get('/:word/echo', function(req, res) {
+//     res.send({echo: req.params.word});
+// });
 
 // app.get('/now', function(req, res, next) {
 //     req.time = new Date().toString();
