@@ -7,6 +7,13 @@ let app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.post("/name", function(req, res) {
+    res.json({
+        name: (req.body.first + " " + req.body.last)
+    });
+});
+
+
 // app.use(function middleware(req,res,next) {
 //     let name = req.method + " " + req.path + " - " + req.ip;
 //     next();
