@@ -15,14 +15,11 @@ let app = express();
 
 
 
-app.get("/name", function(req,res) {
-    var firstName = req.query.first;
-    var lastName = req.quary.last;
-    // let fullName = (firstName + " " + lastName);
-    // res.json({name: `${firstName} ${lastName}`});
-    res.json({
-        name: `${firstName} ${lastName}`
-    });
+app.get('/name', function(req,res) {
+    let firstName = req.query.first;
+    let lastName = req.query.last;
+    let fullName = (firstName + " " + lastName);
+    res.json({name: fullName});
 });
 
 
