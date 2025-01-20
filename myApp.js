@@ -6,7 +6,7 @@ let app = express();
 app.get('/name', function(req,res) {
     let firstName = req.query.first;
     let lastName = req.quary.last;
-    res.send({name: (firstName + lastName)});
+    res.send({"name": (firstName + " " + lastName)});
 });
 
 
