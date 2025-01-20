@@ -7,7 +7,7 @@ app.get('/name', function(req,res) {
     let firstName = req.query.first;
     let lastName = req.quary.last;
     let fullName = (firstName + " " + lastName);
-    res.json({name: fullName});
+    res.json({name: `${firstName} ${lastName}`});
 });
 
 
